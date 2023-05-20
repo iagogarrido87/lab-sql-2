@@ -1,0 +1,23 @@
+use sakila;
+SELECT * FROM actor;
+SELECT * FROM film;
+SELECT * FROM customer;
+SELECT title FROM film;
+SELECT DISTINCT language.name AS language FROM language;
+SELECT COUNT(*) AS store_count FROM store;
+SELECT COUNT(*) AS employee_count FROM staff;
+SELECT first_name FROM staff;
+
+SELECT * FROM actor WHERE first_name = 'Scarlett';
+SELECT * FROM actor WHERE last_name = 'Johansson';
+SELECT COUNT(*) AS available_films FROM film;
+SELECT COUNT(*) AS rented_films FROM rental;
+SELECT MIN(rental_duration) FROM film;
+SELECT MAX(rental_duration) FROM film;
+SELECT MIN(length) AS min_duration FROM film;
+SELECT MAX(length) AS max_duration FROM film;
+SELECT AVG(length) AS average_duration FROM film;
+SELECT SEC_TO_TIME(AVG(length)) AS average_duration_formatted FROM film;
+SELECT COUNT(*) AS movies_longer_than_3_hours FROM film WHERE length > (180);
+SELECT CONCAT(first_name, ' ', last_name, ' - ', email) AS formatted_name_email FROM customer;
+SELECT title, length FROM film ORDER BY length DESC LIMIT 1;
